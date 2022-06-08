@@ -10,17 +10,19 @@ export default function Home() {
   const [yearBorn, setYearBorn] = useState(2000);
   const [monthBorn, setMonthBorn] = useState(1);
   const [dayBorn, setDayBorn] = useState(1);
+  const [ageExpected, setAgeExpected] = useState(80);
+
   const [loading, setLoading] = useState(false);
 
   const [isSubmitted, toggle] = useReducer((s) => !s, false);
   const [off, toggleForm] = useReducer((s) => !s, false);
   const [button, remove] = useReducer((s) => !s, false);
 
-  const year80 = new Date().getFullYear() - 80;
+  const yearExpectancy = new Date().getFullYear() - ageExpected;
 
   // create a function that will submit the data to local storage
   const submitData = () => {
-    if (yearBorn < year80) {
+    if (yearBorn < yearExpectancy) {
       alert("You must be lest than 80 years old to use this app.");
       setYearBorn(2000);
       return;
@@ -59,11 +61,21 @@ export default function Home() {
       toggle(!isSubmitted);
     }, 1000);
   };
-  // create an array of years from the year80 to the current year
-  const years = Array(year - year80)
+  const reset = () => {
+    setYearBorn(2000);
+    setMonthBorn(1);
+    setDayBorn(1);
+    setAgeExpected(80);
+    setLoading(false);
+    toggle(!isSubmitted);
+    remove(!button);
+    toggleForm(!off);
+  };
+  // create an array of years from the yearExpectancy to the current year
+  const years = Array(year - yearExpectancy)
     .fill(null)
     .map((year, index) => {
-      return year80 + index + 1;
+      return yearExpectancy + index + 1;
     });
   const months = Array(12)
     .fill(null)
@@ -74,6 +86,12 @@ export default function Home() {
     .fill(null)
     .map((day, index) => {
       return index + 1;
+    });
+  // create an array of years from 60 to 100
+  const ages = Array(61)
+    .fill(null)
+    .map((age, index) => {
+      return index + 60;
     });
   return (
     <div>
@@ -87,16 +105,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {!off && (
-          <div className={styles.asideLeft}>
-            <p>Visualize your life</p>
-          </div>
-        )}
-        {!off && (
-          <div className={styles.asideRight}>
-            <p>In the form of weeks</p>
-          </div>
-        )}
         <h1 className={styles.title}>Welcome to Visualife</h1>
         {off && (
           <div
@@ -110,71 +118,129 @@ export default function Home() {
               <span>Cream blocks</span> are weeks you have lived
             </p>
             <p className={styles.subtitle}>
-              <span>Red blocks</span> are weeks you have yet to live
+              <span>Red blocks</span> are weeks you have left til age <span>{ageExpected}</span>
             </p>
           </div>
         )}
         {!off && (
-          <div className={styles.form}>
-            <div>
-              <label className={styles.label}>Year Born</label>
-              <select
-                className={styles.select}
-                value={yearBorn}
-                onChange={(e) => setYearBorn(Number(e.target.value))}
-              >
-                <option>{year}</option>
-                {years.reverse().map((year, index) => {
-                  return (
-                    <option key={index} value={year}>
-                      {year}
-                    </option>
-                  );
-                })}
-              </select>
+          <div>
+            <div className={styles.asideLeft}>
+              <p>Visualize your life in the form of weeks</p>
             </div>
-            <div>
-              <label className={styles.label}>Month Born</label>
-              <select
-                className={styles.select}
-                value={monthBorn}
-                onChange={(e) => setMonthBorn(Number(e.target.value))}
+            <div className={styles.form}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  margin: "1rem 0",
+                }}
               >
-                {months.map((month, index) => {
-                  return (
-                    <option key={index} value={month}>
-                      {month}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
-            <div>
-              <label className={styles.label}>Day Born</label>
-              <select
-                className={styles.select}
-                value={dayBorn}
-                onChange={(e) => setDayBorn(Number(e.target.value))}
+                <div className={styles.asideRight}>
+                  <label className={styles.label}>Expected Years to Live</label>
+                  <select
+                    className={styles.select}
+                    value={ageExpected}
+                    onChange={(e) => setAgeExpected(e.target.value)}
+                  >
+                    {ages.map((age, index) => {
+                      return (
+                        <option key={index} value={age}>
+                          {age}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  margin: "1rem 0",
+                }}
               >
-                {days.map((day, index) => {
-                  return (
-                    <option key={index} value={day}>
-                      {day}
-                    </option>
-                  );
-                })}
-              </select>
+                <div>
+                  <label className={styles.label}>Year Born</label>
+                  <select
+                    className={styles.select}
+                    value={yearBorn}
+                    onChange={(e) => setYearBorn(Number(e.target.value))}
+                  >
+                    <option>{year}</option>
+                    {years.reverse().map((year, index) => {
+                      return (
+                        <option key={index} value={year}>
+                          {year}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  margin: "1rem 0",
+                }}
+              >
+                <div>
+                  <label className={styles.label}>Month Born</label>
+                  <select
+                    className={styles.select}
+                    value={monthBorn}
+                    onChange={(e) => setMonthBorn(Number(e.target.value))}
+                  >
+                    {months.map((month, index) => {
+                      return (
+                        <option key={index} value={month}>
+                          {month}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  margin: "1rem 0",
+                }}
+              >
+                <div>
+                  <label className={styles.label}>Day Born</label>
+                  <select
+                    className={styles.select}
+                    value={dayBorn}
+                    onChange={(e) => setDayBorn(Number(e.target.value))}
+                  >
+                    {days.map((day, index) => {
+                      return (
+                        <option key={index} value={day}>
+                          {day}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                {!button && (
+                  <button className={styles.button} onClick={submitData}>
+                    Submit
+                  </button>
+                )}
+                {button && (
+                  <button
+                    className={styles.buttonVisualife}
+                    onClick={fetchData}
+                  >
+                    Visualife
+                  </button>
+                )}
+              </div>
             </div>
-            {!button && (
-              <button className={styles.button} onClick={submitData}>
-                Submit
-              </button>
-            )}
-            {button && (
-              <button className={styles.buttonVisualife} onClick={fetchData}>
-                Visualife
-              </button>
-            )}
           </div>
         )}
         {loading && (
@@ -184,7 +250,12 @@ export default function Home() {
             </button>
           </div>
         )}
-        {isSubmitted && <Graph />}
+        {isSubmitted && <Graph ageExpected={ageExpected} />}
+        {isSubmitted && (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button className={styles.button} onClick={reset}>Run it again</button>
+          </div>
+        )}
         <div className={styles.landscapeMode}>
           Turn screen for best experience
         </div>

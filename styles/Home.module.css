@@ -8,9 +8,10 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 3px solid #2e3440;
   justify-content: center;
   align-items: center;
+  margin-top: 6rem;
 }
 .title {
   text-align: center;
@@ -35,17 +36,9 @@
 }
 
 .asideLeft {
-  position: absolute;
-  top: 12.5%;
-  left: 20%;
-  width: 20%;
-  height: 20%;
   background: -webkit-linear-gradient(-70deg, #ff2b20be 0%, #ffd18bbe 100%);
-  z-index: 1;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  text-align: center;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -53,17 +46,9 @@
   font-size: clamp(0.75rem, 2vw, 2rem);
 }
 .asideRight {
-  position: absolute;
-  top: 12.5%;
-  left: 60%;
-  width: 20%;
-  height: 20%;
+
   background: -webkit-linear-gradient(-70deg, #ff2b20be 0%, #ffd18bbe 100%);
-  z-index: 1;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -75,14 +60,30 @@
   flex-wrap: wrap;
   margin-left: 0.75%;
 }
+.graphLabelLeft {
+  position: fixed;
+  top: 12.65%;
+  left: 0;
+  width: 2%;
+  height: 100vh;
+  background-color: #e58c065e;
+  margin-left: 8px;
+  line-height: 3.5;
+}
+.graphLabelTop {
+  width: 1.5%;
+  height: 0.75;
+  background-color: #ff2c20;
+  margin: 2px;
+}
 .blockRemaining{
-  width: 1.75%;
+  width: 1.775%;
   height: 0.75;
   background-color: #ff2c20;
   margin: 2px;
 }
 .blockLived {
-  width: 1.75%;
+  width: 1.775%;
   height: 0.75;
   background-color: #ffd18b;
   margin: 2px;
@@ -91,20 +92,17 @@
   font-size: 4px;
 }
 .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 65%;
+  width: 50%;
   height: auto;
   padding: 2rem;
   border-radius: 0.5rem;
   background-color: #2e3440;
-  margin: 2rem auto;
+  margin: 0 auto;
 }
 .label {
   display: block;
   font-size: clamp(1rem, 2vw, 2rem);
+  text-align: center;
 }
 .input {
   display: block;
@@ -116,15 +114,17 @@
   font-size: clamp(1rem, 2vw, 2rem);
 }
 .select {
+  display: block;
   appearance: none;
   background-color: transparent;
   border: 1px solid #eaeaea;
   border-radius: 0.5rem;
   padding: 0 1rem 0 1rem;
   margin: 0.5rem 0;
-  width: calc(8vw + 1rem);
+  width: calc(12vw + 1rem);
   font-size: clamp(1.25rem, 2vw, 2rem);
   max-height: calc(1.5vw + 1rem);
+  text-align: center;
 }
 .select:focus, .select:active {
   outline: none;
@@ -201,17 +201,8 @@
     width: 1.425%;
     height: 1%;
   }
-  .asideLeft {
-    top: 5%;
-    left: 5%;
-    width: 20%;
-    height: 20%;
-  }
-  .asideRight {
-    top: 5%;
-    left: 75%;
-    width: 20%;
-    height: 20%;
+  .select {
+    width: 21vw;
   }
 }
 
