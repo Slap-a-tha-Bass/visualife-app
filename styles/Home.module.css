@@ -132,6 +132,26 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
+.landscapeMode {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 40vw;
+  background: linear-gradient(-70deg, #ff2c20 0%, #ffd18b 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+@media (min-width:843px) {
+  .landscapeMode {
+    display: none;
+  }
+}
 @media (max-width: 844px) {
   .block {
     width: 1.425%;

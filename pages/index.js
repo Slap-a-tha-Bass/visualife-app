@@ -140,6 +140,7 @@ export default function Home() {
           </div>
         )}
         {isSubmitted && <Graph />}
+        <div className={styles.landscapeMode}>Turn screen for best experience</div>
       </main>
       <footer className={styles.footer}>
         <p>Copyright © {year}</p>
