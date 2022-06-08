@@ -1,15 +1,16 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useState, useReducer, useEffect } from "react";
+import { useState, useReducer } from "react";
 
 import styles from "../styles/Home.module.css";
 import { yearInWeeks } from "../utils/yearInWeeks";
 import Graph from "../components/graph";
+import Loader from "../components/loader";
 
 export default function Home() {
   const [yearBorn, setYearBorn] = useState(2000);
   const [monthBorn, setMonthBorn] = useState(1);
   const [dayBorn, setDayBorn] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   const [isSubmitted, toggle] = useReducer((s) => !s, false);
   const [off, toggleForm] = useReducer((s) => !s, false);
@@ -17,12 +18,17 @@ export default function Home() {
 
   // create a function that will submit the data to local storage
   const submitData = () => {
+    setLoading(true);
     localStorage.setItem("yearBorn", yearBorn);
     localStorage.setItem("monthBorn", monthBorn);
     localStorage.setItem("dayBorn", dayBorn);
-    remove(!button);
+    setTimeout(() => {
+      remove(!button);
+      setLoading(false);
+    }, 1000);
   };
   const fetchData = () => {
+    setLoading(true);
     const yearBorn = localStorage.getItem("yearBorn");
     const monthBorn = localStorage.getItem("monthBorn");
     const dayBorn = localStorage.getItem("dayBorn");
@@ -30,8 +36,11 @@ export default function Home() {
       "weeksLived",
       yearInWeeks({ yearBorn, monthBorn, dayBorn })
     );
-    toggle(!isSubmitted);
-    toggleForm(!off);
+    setTimeout(() => {
+      toggleForm(!off);
+      setLoading(false);
+      toggle(!isSubmitted);
+    }, 1000);
   };
   return (
     <div>
@@ -56,7 +65,9 @@ export default function Home() {
           </div>
         )}
         <h1 className={styles.title}>Welcome to Visualife</h1>
-        {off && <p className={styles.subtitle}>Red blocks are weeks you have lived</p>}
+        {off && (
+          <p className={styles.subtitle}>Red blocks are weeks you have lived</p>
+        )}
         {!off && (
           <div className={styles.form}>
             <div>
@@ -86,14 +97,23 @@ export default function Home() {
                 onChange={(e) => setDayBorn(Number(e.target.value))}
               />
             </div>
-            {!button && <button className={styles.button} onClick={submitData}>
-              Submit
-            </button>}
+            {!button && (
+              <button className={styles.button} onClick={submitData}>
+                Submit
+              </button>
+            )}
             {button && (
               <button className={styles.button} onClick={fetchData}>
                 Visualife
               </button>
             )}
+          </div>
+        )}
+        {loading && (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button className={styles.button}>
+              <Loader />
+            </button>
           </div>
         )}
         {isSubmitted && <Graph />}
