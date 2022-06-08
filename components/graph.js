@@ -1,12 +1,9 @@
 import styles from "../styles/Home.module.css";
-import { useEffect } from "react";
+
 const age80inWeeks = 4171;
 
 export default function Graph() {
-  useEffect(() => {
-    const weeksLived = localStorage.getItem("weeksLived");
-    return weeksLived;
-  }, [weeksLived]);
+  const weeksLived = localStorage.getItem("weeksLived");
   const remainingWeeksFirstHalf = (age80inWeeks - weeksLived) / 2;
   const remainingWeeksSecondHalf = remainingWeeksFirstHalf;
 

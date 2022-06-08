@@ -4,7 +4,7 @@ import { useState, useReducer, useEffect } from "react";
 
 import styles from "../styles/Home.module.css";
 import { yearInWeeks } from "../utils/yearInWeeks";
-import Graph from "./graph";
+import Graph from "../components/graph";
 
 export default function Home() {
   const [yearBorn, setYearBorn] = useState(2000);
