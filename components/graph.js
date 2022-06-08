@@ -6,6 +6,9 @@ export default function Graph() {
   const weeksLived = localStorage.getItem("weeksLived");
   const remainingWeeksFirstHalf = (age80inWeeks - weeksLived) / 2;
   const remainingWeeksSecondHalf = remainingWeeksFirstHalf;
+  console.log("weeksLived", weeksLived);
+  console.log("remainingWeeksFirstHalf", remainingWeeksFirstHalf);
+  console.log("remainingWeeksSecondHalf", remainingWeeksSecondHalf);
 
   return (
     <div className={styles.container}>
@@ -20,7 +23,7 @@ export default function Graph() {
             );
           })}
       {remainingWeeksFirstHalf &&
-        Array(Number(remainingWeeksFirstHalf) + Number(weeksLived))
+        Array(Math.floor(Number(remainingWeeksFirstHalf)))
           .fill(null)
           .map((block, index) => {
             return (
@@ -30,11 +33,7 @@ export default function Graph() {
             );
           })}
       {remainingWeeksSecondHalf &&
-        Array(
-          Number(remainingWeeksSecondHalf) +
-            Number(weeksLived) +
-            Number(remainingWeeksFirstHalf)
-        )
+        Array(Math.floor(Number(remainingWeeksSecondHalf)))
           .fill(null)
           .map((block, index) => {
             return (

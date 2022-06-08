@@ -16,8 +16,25 @@ export default function Home() {
   const [off, toggleForm] = useReducer((s) => !s, false);
   const [button, remove] = useReducer((s) => !s, false);
 
+  const year80 = new Date().getFullYear() - 80;
+
   // create a function that will submit the data to local storage
   const submitData = () => {
+    if (yearBorn < year80) {
+      alert("You must be lest than 80 years old to use this app.");
+      setYearBorn(2000);
+      return;
+    }
+    if (monthBorn > 12 || monthBorn < 1) {
+      alert("Please enter a valid month.");
+      setMonthBorn(1);
+      return;
+    }
+    if (dayBorn > 31 || dayBorn < 1) {
+      alert("Please enter a valid day.");
+      setDayBorn(1);
+      return;
+    }
     setLoading(true);
     localStorage.setItem("yearBorn", yearBorn);
     localStorage.setItem("monthBorn", monthBorn);
@@ -42,6 +59,7 @@ export default function Home() {
       toggle(!isSubmitted);
     }, 1000);
   };
+
   return (
     <div>
       <Head>
@@ -77,6 +95,7 @@ export default function Home() {
                 className={styles.input}
                 value={yearBorn}
                 onChange={(e) => setYearBorn(Number(e.target.value))}
+                min={year80}
               />
             </div>
             <div>
@@ -86,6 +105,8 @@ export default function Home() {
                 className={styles.input}
                 value={monthBorn}
                 onChange={(e) => setMonthBorn(Number(e.target.value))}
+                min={1}
+                max={12}
               />
             </div>
             <div>
@@ -95,6 +116,8 @@ export default function Home() {
                 className={styles.input}
                 value={dayBorn}
                 onChange={(e) => setDayBorn(Number(e.target.value))}
+                min={1}
+                max={31}
               />
             </div>
             {!button && (

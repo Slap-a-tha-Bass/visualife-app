@@ -110,7 +110,7 @@
 }
 .input {
   display: block;
-  width: 100%;
+  width: calc(10vw + 1rem);
   padding: 0.5rem;
   border: 1px solid #eaeaea;
   border-radius: 0.5rem;
