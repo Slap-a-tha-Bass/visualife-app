@@ -84,7 +84,17 @@ export default function Home() {
         )}
         <h1 className={styles.title}>Welcome to Visualife</h1>
         {off && (
-          <p className={styles.subtitle}>Red blocks are weeks you have lived</p>
+          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
+            <p className={styles.subtitle}>
+              <span>Red blocks</span> are weeks you have lived
+            </p>
+            <p className={styles.subtitle}>
+              <span>Orange blocks</span> are halfway to age 80
+            </p>
+            <p className={styles.subtitle}>
+              <span>Cream blocks</span> are up to age 80
+            </p>
+          </div>
         )}
         {!off && (
           <div className={styles.form}>
@@ -140,7 +150,9 @@ export default function Home() {
           </div>
         )}
         {isSubmitted && <Graph />}
-        <div className={styles.landscapeMode}>Turn screen for best experience</div>
+        <div className={styles.landscapeMode}>
+          Turn screen for best experience
+        </div>
       </main>
       <footer className={styles.footer}>
         <p>Copyright © {year}</p>

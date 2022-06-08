@@ -23,12 +23,18 @@
 }
 .subtitle {
   text-align: center;
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   line-height: 1.15;
-  font-size: clamp(0.75rem, 4vw, 1.5rem);
-  background: -webkit-linear-gradient(-70deg, #ff2c20 0%, #ffd18b 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: clamp(0.75rem, 1vw, 1.5rem);
+}
+.subtitle span {
+  color: #ff2c20;
+}
+.subtitle:nth-child(2) span {
+  color: #e58c06;
+}
+.subtitle:nth-child(3) span {
+  color: #ffd18b;
 }
 .asideLeft {
   position: absolute;
