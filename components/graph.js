@@ -6,9 +6,6 @@ export default function Graph() {
   const weeksLived = localStorage.getItem("weeksLived");
   const remainingWeeksFirstHalf = (age80inWeeks - weeksLived) / 2;
   const remainingWeeksSecondHalf = remainingWeeksFirstHalf;
-  console.log("weeksLived", weeksLived);
-  console.log("remainingWeeksFirstHalf", remainingWeeksFirstHalf);
-  console.log("remainingWeeksSecondHalf", remainingWeeksSecondHalf);
 
   return (
     <div className={styles.container}>

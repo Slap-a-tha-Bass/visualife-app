@@ -123,11 +123,52 @@
   margin-bottom: 1rem;
   font-size: clamp(1rem, 2vw, 2rem);
 }
-.input:focus, .input:active {
+.select {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #eaeaea;
+  border-radius: 0.5rem;
+  padding: 0 1rem 0 1rem;
+  margin: 0.5rem 0;
+  width: calc(7.5vw + 1rem);
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  max-height: calc(1.5vw + 1rem);
+}
+.select:focus, .select:active {
   outline: none;
   border: 1px solid #ff2c20;
 }
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 #e58c06;
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px #ff2c20;
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 #ff2c20;
+  }
+}
+.buttonVisualife {
+  margin: 1rem;
+  background: linear-gradient(-70deg, #ff2c20 0%, #ffd18b 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: clamp(1rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  animation: pulse 2s infinite;
+}
 .button {
+  margin: 1rem;
   background: linear-gradient(-70deg, #ff2c20 0%, #ffd18b 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;

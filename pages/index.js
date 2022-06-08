@@ -59,7 +59,22 @@ export default function Home() {
       toggle(!isSubmitted);
     }, 1000);
   };
-
+  // create an array of years from the year80 to the current year
+  const years = Array(year - year80)
+    .fill(null)
+    .map((year, index) => {
+      return year80 + index + 1;
+    });
+  const months = Array(12)
+    .fill(null)
+    .map((month, index) => {
+      return index + 1;
+    });
+  const days = Array(31)
+    .fill(null)
+    .map((day, index) => {
+      return index + 1;
+    });
   return (
     <div>
       <Head>
@@ -84,7 +99,13 @@ export default function Home() {
         )}
         <h1 className={styles.title}>Welcome to Visualife</h1>
         {off && (
-          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
             <p className={styles.subtitle}>
               <span>Red blocks</span> are weeks you have lived
             </p>
@@ -100,35 +121,52 @@ export default function Home() {
           <div className={styles.form}>
             <div>
               <label className={styles.label}>Year Born</label>
-              <input
-                type="number"
-                className={styles.input}
+              <select
+                className={styles.select}
                 value={yearBorn}
                 onChange={(e) => setYearBorn(Number(e.target.value))}
-                min={year80}
-              />
+              >
+                <option>{year}</option>
+                {years.reverse().map((year, index) => {
+                  return (
+                    <option key={index} value={year}>
+                      {year}
+                    </option>
+                  );
+                })}
+              </select>
             </div>
             <div>
               <label className={styles.label}>Month Born</label>
-              <input
-                type="number"
-                className={styles.input}
+              <select
+                className={styles.select}
                 value={monthBorn}
                 onChange={(e) => setMonthBorn(Number(e.target.value))}
-                min={1}
-                max={12}
-              />
+              >
+                {months.map((month, index) => {
+                  return (
+                    <option key={index} value={month}>
+                      {month}
+                    </option>
+                  );
+                })}
+              </select>
             </div>
             <div>
               <label className={styles.label}>Day Born</label>
-              <input
-                type="number"
-                className={styles.input}
+              <select
+                className={styles.select}
                 value={dayBorn}
                 onChange={(e) => setDayBorn(Number(e.target.value))}
-                min={1}
-                max={31}
-              />
+              >
+                {days.map((day, index) => {
+                  return (
+                    <option key={index} value={day}>
+                      {day}
+                    </option>
+                  );
+                })}
+              </select>
             </div>
             {!button && (
               <button className={styles.button} onClick={submitData}>
@@ -136,7 +174,7 @@ export default function Home() {
               </button>
             )}
             {button && (
-              <button className={styles.button} onClick={fetchData}>
+              <button className={styles.buttonVisualife} onClick={fetchData}>
                 Visualife
               </button>
             )}
