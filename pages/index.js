@@ -107,13 +107,10 @@ export default function Home() {
             }}
           >
             <p className={styles.subtitle}>
-              <span>Red blocks</span> are weeks you have lived
+              <span>Cream blocks</span> are weeks you have lived
             </p>
             <p className={styles.subtitle}>
-              <span>Orange blocks</span> are halfway to age 80
-            </p>
-            <p className={styles.subtitle}>
-              <span>Cream blocks</span> are up to age 80
+              <span>Red blocks</span> are weeks you have yet to live
             </p>
           </div>
         )}
