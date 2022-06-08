@@ -89,12 +89,12 @@ export default function Home() {
       <main className={styles.main}>
         {!off && (
           <div className={styles.asideLeft}>
-            <p>Let&apos;s assume you live to age 80</p>
+            <p>Visualize your life</p>
           </div>
         )}
         {!off && (
           <div className={styles.asideRight}>
-            <p>Use numbers for your DOB</p>
+            <p>In the form of weeks</p>
           </div>
         )}
         <h1 className={styles.title}>Welcome to Visualife</h1>
