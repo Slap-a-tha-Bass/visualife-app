@@ -134,7 +134,7 @@
 }
 .landscapeMode {
   position: absolute;
-  top: 60%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50vw;
@@ -147,8 +147,13 @@
   padding: 0.5rem;
   font-size: 2rem;
 }
-@media (min-width:843px) {
-  .landscapeMode {
+@media (max-width:600px) {
+  .form, .asideLeft, .asideRight {
+    display:none;
+  }
+}
+@media (min-width:600px) {
+  .landscapeMode{
     display: none;
   }
 }
