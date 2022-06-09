@@ -62,38 +62,32 @@
 }
 .graphLabelLeft {
   position: absolute;
-  top: 8.5%;
+  top: 168px;
   left: 0;
   width: 2%;
   height: 100vh;
-  margin-left: 8px;
+  margin-left: 4px;
 }
 .graphLabelLeft p {
-  font-size: 8px;
-  margin: 30px 0;
+  font-size: 6px;
+  margin: 3px 0;
+  color: #d0d0d0;
 }
 .graphLabelTop {
-  position: absolute;
-  display: flex;
-  top: 10%;
-  width: 100%;
-  height: 5%;
-  background-color: #ff2b2064;
-  font-size: 8px;
-  margin-left: 20px;
+  width: 1.75%;
+  margin: 2px;
 }
 .graphLabelTop p {
-  margin: 0 1.25rem;
+  font-size: 6px;
+  color: #d0d0d0;
 }
 .blockRemaining{
   width: 1.75%;
-  height: 0.75;
   background-color: #ff2c20;
   margin: 2px;
 }
 .blockLived {
   width: 1.75%;
-  height: 0.75;
   background-color: #ffd18b;
   margin: 2px;
 }
@@ -199,212 +193,287 @@
 }
 /* BLOCK SIZING SECTION */
 @media (max-width: 2324px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.725%;
+  }
+  .graphLabelLeft {
+    top: 165px;
   }
 }
 @media (max-width: 2031px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.715%;
+  }
+  .graphLabelLeft {
+    top: 163px;
   }
 }
 @media (max-width: 1936px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.705%;
   }
 }
 @media (max-width: 1846px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.695%;
+  }
+  .graphLabelLeft {
+    top: 161px;
   }
 }
 @media (max-width: 1764px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.685%;
   }
 }
 @media (max-width: 1688px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.675%;
+  }
+  .graphLabelLeft {
+    top: 159px;
   }
 }
 @media (max-width: 1620px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.665%;
   }
 }
 @media (max-width: 1556px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.655%;
   }
 }
 @media (max-width: 1496px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.645%;
+  }
+  .graphLabelLeft {
+    top: 157px;
   }
 }
 @media (max-width: 1444px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.635%;
   }
 }
 @media (max-width: 1394px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.625%;
   }
 }
 @media (max-width: 1346px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.615%;
   }
 }
 @media (max-width: 1304px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.605%;
+  }
+  .graphLabelLeft {
+    top: 155px;
+    margin-left: 2px;
   }
 }
 @media (max-width: 1263px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.595%;
   }
 }
 @media (max-width: 1227px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.575%;
+  }
+  .graphLabelLeft {
+    top: 153px;
+    margin-left: 2px;
   }
 }
 @media (max-width: 1155px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.565%;
+  }
+  .graphLabelLeft {
+    top: 151px;
+    margin-left: 2px;
   }
 }
 @media (max-width: 1123px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.555%;
+  }
+  .graphLabelLeft {
+    top: 149px;
+    margin-left: 1px;
   }
 }
 @media (max-width: 1092px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.545%;
   }
 }
 @media (max-width: 1065px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.535%;
+  }
+  .graphLabelLeft {
+    top: 145px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 1038px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.525%;
   }
 }
 @media (max-width: 1011px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.515%;
   }
 }
 @media (max-width: 983px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.505%;
   }
 }
 @media (max-width: 961px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.495%;
+  }
+  .graphLabelLeft {
+    top: 143px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 938px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.485%;
+  }
+  .graphLabelLeft {
+    top: 141px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 916px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.475%;
   }
 }
 @media (max-width: 898px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.465%;
+  }
+  .graphLabelLeft {
+    top: 139px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 878px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.455%;
   }
 }
 @media (max-width: 857px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.445%;
   }
 }
 @media (max-width: 843px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.415%;
+  }
+  .graphLabelLeft {
+    top: 137px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 794px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.405%;
+  }
+  .graphLabelLeft {
+    top: 135px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 780px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.385%;
   }
 }
 @media (max-width: 752px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.355%;
+  }
+  .graphLabelLeft {
+    top: 133px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 712px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.325%;
+  }
+  .graphLabelLeft {
+    top: 131px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 676px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.305%;
+  }
+  .graphLabelLeft {
+    top: 129px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 654px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.285%;
   }
 }
 @media (max-width: 635px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.265%;
+  }
+  .graphLabelLeft {
+    top: 127px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 614px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.245%;
   }
 }
 @media (max-width: 596px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.215%;
+  }
+  .graphLabelLeft {
+    top: 126px;
+    margin-left: 0px;
   }
 }
 @media (max-width: 572px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.185%;
   }
 }
 @media (max-width: 549px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.155%;
   }
 }
 @media (max-width: 527px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.125%;
   }
 }
 @media (max-width: 508px) {
-  .blockLived, .blockRemaining {
+  .blockLived, .blockRemaining, .graphLabelTop {
     width: 1.095%;
   }
 }
@@ -423,10 +492,6 @@
 @media (max-width: 844px) {
   .select {
     width: 21vw;
-  }
-  .graphLabelLeft {
-    top: 22%;
-    margin-left: 0;
   }
   .container {
     padding-left: 4px;
