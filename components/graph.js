@@ -1,7 +1,5 @@
 import styles from "../styles/Home.module.css";
 
-const age80inWeeks = 4171;
-
 export default function Graph({ ageExpected }) {
   const ageInWeeks = ageExpected * 52;
   const weeksLived = localStorage.getItem("weeksLived");
@@ -9,18 +7,6 @@ export default function Graph({ ageExpected }) {
 
   return (
     <div>
-      <div className={styles.graphLabelLeft}>
-        {Array(ageExpected)
-          .fill(null)
-          .map((label, index) => {
-            return (
-              <div key={index}>
-                <p>{index + 1}</p>
-              </div>
-            );
-          })}
-      </div>
-
       <div className={styles.container}>
         {Array(52)
           .fill(null)
@@ -52,6 +38,7 @@ export default function Graph({ ageExpected }) {
               );
             })}
       </div>
+      <p className={styles.ageAtEnd}>Age {ageExpected} &uarr;</p>
     </div>
   );
 }

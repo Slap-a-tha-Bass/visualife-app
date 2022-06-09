@@ -91,6 +91,12 @@
   background-color: #ffd18b;
   margin: 2px;
 }
+.ageAtEnd {
+  text-align: end;
+  font-size: clamp(0.75rem, 1vw, 1.5rem);
+  margin-right: clamp(0.5rem, 1vw, 1.5rem);
+  color:#ff2c20;
+}
 .paragraph {
   font-size: 6px;
   color: black;
