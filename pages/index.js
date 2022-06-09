@@ -6,6 +6,8 @@ import { yearInWeeks } from "../utils/yearInWeeks";
 import Graph from "../components/graph";
 import Loader from "../components/loader";
 
+import { reset, months, days, ages } from "../utils/helpers";
+
 export default function Home() {
   const [yearBorn, setYearBorn] = useState(2000);
   const [monthBorn, setMonthBorn] = useState(1);
@@ -71,27 +73,10 @@ export default function Home() {
     remove(!button);
     toggleForm(!off);
   };
-  // create an array of years from the yearExpectancy to the current year
   const years = Array(year - yearExpectancy)
     .fill(null)
     .map((year, index) => {
       return yearExpectancy + index + 1;
-    });
-  const months = Array(12)
-    .fill(null)
-    .map((month, index) => {
-      return index + 1;
-    });
-  const days = Array(31)
-    .fill(null)
-    .map((day, index) => {
-      return index + 1;
-    });
-  // create an array of years from 60 to 100
-  const ages = Array(61)
-    .fill(null)
-    .map((age, index) => {
-      return index + 60;
     });
   return (
     <div>
@@ -118,7 +103,8 @@ export default function Home() {
               <span>Cream blocks</span> are weeks you have lived
             </p>
             <p className={styles.subtitle}>
-              <span>Red blocks</span> are weeks you have left til age <span>{ageExpected}</span>
+              <span>Red blocks</span> are weeks you have left til age{" "}
+              <span>{ageExpected}</span>
             </p>
           </div>
         )}
@@ -136,7 +122,8 @@ export default function Home() {
                 }}
               >
                 <div className={styles.asideRight}>
-                  <label className={styles.label}>Expected Years to Live</label>
+                  <label className={styles.label}>Expected Years</label>
+                  <label className={styles.label}>To Live</label>
                   <select
                     className={styles.select}
                     value={ageExpected}
@@ -253,7 +240,9 @@ export default function Home() {
         {isSubmitted && <Graph ageExpected={ageExpected} />}
         {isSubmitted && (
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <button className={styles.button} onClick={reset}>Run it again</button>
+            <button className={styles.button} onClick={reset}>
+              Run it again
+            </button>
           </div>
         )}
         <div className={styles.landscapeMode}>

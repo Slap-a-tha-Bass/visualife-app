@@ -10,21 +10,23 @@ export default function Graph({ ageExpected }) {
   return (
     <div>
         {/* <div className={styles.graphLabelLeft}>
-            <p style={{ fontSize: "8px"}}>1</p>
-            <p style={{ fontSize: "8px"}}>5</p>
-            <p style={{ fontSize: "8px"}}>10</p>
-            <p style={{ fontSize: "8px"}}>15</p>
-            <p style={{ fontSize: "8px"}}>20</p>
-            <p style={{ fontSize: "8px"}}>25</p>
-            <p style={{ fontSize: "8px"}}>30</p>
-            <p style={{ fontSize: "8px"}}>35</p>
-            <p style={{ fontSize: "8px"}}>40</p>
-            <p style={{ fontSize: "8px"}}>45</p>
-            <p style={{ fontSize: "8px"}}>50</p>
-            <p style={{ fontSize: "8px"}}>55</p>
-            <p style={{ fontSize: "8px"}}>60</p>
-            <p style={{ fontSize: "8px"}}>65</p>
-            <p style={{ fontSize: "8px"}}>70</p>
+            <p>1</p>
+            <p>5</p>
+            <p>10</p>
+            <p>15</p>
+            <p>20</p>
+            <p>25</p>
+            <p>30</p>
+            <p>35</p>
+            <p>40</p>
+            <p>45</p>
+            <p>50</p>
+            <p>55</p>
+            <p>60</p>
+            <p>65</p>
+            <p>70</p>
+            <p>75</p>
+            <p>80</p>
         </div> */}
       <div className={styles.container}>
         {weeksLived &&
